@@ -102,6 +102,8 @@ anomaly_algorithms = [
         SGDOneClassSVM(nu=outliers_fraction, shuffle=True,
                        fit_intercept=True, random_state=42, tol=1e-6)
     )),
+    ("SVDD", svm.SVDD(nu=outliers_fraction, kernel="rbf",
+                      gamma=0.1)),
     ("Isolation Forest", IsolationForest(contamination=outliers_fraction,
                                          random_state=42)),
     ("Local Outlier Factor", LocalOutlierFactor(
