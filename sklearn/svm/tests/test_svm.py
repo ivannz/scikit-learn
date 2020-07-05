@@ -651,9 +651,11 @@ def test_svm_equivalence_sample_weight_C():
      (svm.NuSVR,
       'Invalid input - all samples have zero or negative weights.'),
      (svm.OneClassSVM,
+      'Invalid input - all samples have zero or negative weights.'),
+     (svm.SVDD,
       'Invalid input - all samples have zero or negative weights.')
      ],
-    ids=['SVC', 'NuSVC', 'SVR', 'NuSVR', 'OneClassSVM']
+    ids=['SVC', 'NuSVC', 'SVR', 'NuSVR', 'OneClassSVM', 'SVDD']
 )
 @pytest.mark.parametrize(
     "sample_weight",
