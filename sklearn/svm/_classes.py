@@ -1349,9 +1349,13 @@ class OneClassSVM(OutlierMixin, BaseLibSVM):
     >>> clf.score_samples(X)
     array([1.7798..., 2.0547..., 2.0556..., 2.0561..., 1.7332...])
 
-    See also
+    See Also
     --------
     sklearn.linear_model.SGDOneClassSVM
+
+    SVDD : Support vector method for outlier detection via a separating
+        soft-margin hypesphere implemented with libsvm with a parameter
+        to control the number of support vectors.
     """
 
     _impl = 'one_class'
@@ -1568,6 +1572,12 @@ class SVDD(OutlierMixin, BaseLibSVM):
     >>> clf.score_samples(X)
     array([0.5298..., 0.8047..., 0.8056..., 0.8061..., 0.4832...])
 
+    See Also
+    --------
+    OneClassSVM : Support vector method for outlier detection via a separating
+        soft-margin hyperplane implemented with libsvm with a parameter to
+        control the number of support vectors.
+
     References
     ----------
     .. [1] Tax, D.M. and Duin, R.P., 2004. "Support vector data
@@ -1677,7 +1687,7 @@ class SVDD(OutlierMixin, BaseLibSVM):
     def _more_tags(self):
         return {
             '_xfail_checks': {
-                'check_sample_weights_invariance(kind=zeros)':
+                'check_sample_weights_invariance':
                 'zero sample_weight is not equivalent to removing samples',
             }
         }
