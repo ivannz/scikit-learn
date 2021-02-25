@@ -556,6 +556,13 @@ Changelog
   :func:`~sklearn.utils.check_array` in 1.0 and will raise a `TypeError` in
   1.2. :pr:`20165` by `Thomas Fan`_.
 
+:mod:`sklearn.svm`
+..................
+
+- |Feature| Added the :class:`svm.SVDD` class for novelty detection based
+  on soft minimal volume hypersphere around the sample data. :pr:`7910`
+  by :user:`Ivan Nazarov <ivannz>`.
+
 Code and Documentation Contributors
 -----------------------------------
 
